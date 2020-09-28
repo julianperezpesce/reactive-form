@@ -39,6 +39,20 @@
         </div>
     </div>
 
+    <div class="form-group row">
+        <label class="col-2 col-form-label">País</label>
+        <div class="col-8">
+            <select class="form-control" name="pais" [class.is-invalid]="pais.invalid && pais.touched" [disabled]="paises.length === 0" [ngModel]="usuario.pais" #pais="ngModel" required>
+                <small class="form-text text-danger" *ngIf="correo.invalid && correo.touched">
+                    Seleccione su país
+                </small>
+                <option *ngFor="let pais of paises" [value]="pais.codigo">
+                    {{ pais.nombre }}                     
+                </option>
+            </select>
+        </div>
+    </div>
+
 
 
     <div class="form-group row">
